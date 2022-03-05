@@ -1,0 +1,55 @@
+SpringBoot Framework
+
+1. When JVM encounters SpringApplication.run() method then Spring Container
+is created. The objects inside that container are called as Spring Bean
+-> Sets up default configuration
+-> Starts Spring application context
+-> Performs class path scan
+-> Starts Tomcat Server
+
+2. There are 2 different scopes are available when you create Spring Bean
+  i.e Singleton and Prototype
+  
+3. Instead of using new keyword to create obj we can ask spring to create
+obj and give it to our app. To do so, we need to mention @Component annotation
+on class of which we want obj.
+
+4. So when we ask spring to give us the obj of class using getBean() , it will
+provide us the obj.
+
+5. We can change the scope of Spring container by using 
+@Scope(value="prototype")
+
+6. We can use HttpSession class obj in spring even without importing
+HttpRequest or HttpResponse class
+
+7. To work with H2 database in spring , mention following properties in
+ application.properties file
+ spring.h2.console.enabled=true
+spring.datasource.platform=h2
+spring.datasource.url=jdbc:h2:mem
+
+
+
+8. Bean is an object that we can inject in any class and we need not worry about its instantiation or 
+its dependencies as that is taken care by the framework itself.The beans in
+ Spring are stored in an IoC (Inversion of Control) container which is often referred as Application Context.
+
+9. Controller
+-> A Java class
+-> Marked with annotations
+-> Has info about
+ -> What URL access triggers it?
+ -> What method to run when accessed? 
+ 
+ 10. @RestController annotation helps in making a Rest service
+ 11. @RequestMapping maps to only GET method by default. To map to
+ other HTTP methods, you'll have to specify it in the annotation
+ 12. In Spring , Business service are singleton which means when
+ app gets started only one instance of that service is created.
+ 
+ 13. If we want an instance of Service created by spring in another class,
+  we can use do that by using private modifier.
+ 14. @RequestBody annotation tells spring to take input in form of json
+ and convert it into provided instance	
+ 
