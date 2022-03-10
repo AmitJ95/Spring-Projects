@@ -53,3 +53,15 @@ its dependencies as that is taken care by the framework itself.The beans in
  14. @RequestBody annotation tells spring to take input in form of json
  and convert it into provided instance	
  
+ 
+ 15. For basic CRUD operations in Spring we can use CrudRepository
+ interface in Spring which will take Entity(Table name) and 
+ it's Primary Key Type as type in diamond operator.
+ 
+ 
+ 16. @GeneratedValue 
+ If we want to automatically generate the primary key value, 
+ we can add the @GeneratedValue annotation. 
+ This can use four generation types: AUTO, IDENTITY, SEQUENCE and TABLE.
+ 
+ 
