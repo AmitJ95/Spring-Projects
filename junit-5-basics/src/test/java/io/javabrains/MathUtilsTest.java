@@ -5,6 +5,8 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 
 class MathUtilsTest {
@@ -23,6 +25,25 @@ class MathUtilsTest {
 		int actual = mathUtils.add(1, 1);
 		assertEquals(expected, actual, "Should return sum as 2");
 	}
+
+	@Nested
+	class AddTest {
+		@Test
+		@DisplayName("Testing add method for +")
+		void testAddPositive() {
+			assertEquals(2, mathUtils.add(1, 1), "The add method should add two numbers");
+		}
+
+		@Test
+		@DisplayName("Testing add method - ")
+		void testAddNegative() {
+			assertEquals(-2, mathUtils.add(-1, -1), "The add method should add numbers");
+		}
+
+	}
+
+	
+
 //	@Test
 //	void testComputeCircleArea() {
 //		MathUtils mathUtils  = new MathUtils();
@@ -39,10 +60,8 @@ class MathUtilsTest {
 
 	@Test
 	void testMultiply() {
-		assertAll(
-				() -> assertEquals(4, mathUtils.multiply(2, 2)), 
-				() -> assertEquals(0, mathUtils.multiply(2, 0)),
-				() -> assertEquals(-2, mathUtils.multiply(2,-1)));
+		assertAll(() -> assertEquals(4, mathUtils.multiply(2, 2)), () -> assertEquals(0, mathUtils.multiply(2, 0)),
+				() -> assertEquals(-2, mathUtils.multiply(2, -1)));
 	}
 
 }

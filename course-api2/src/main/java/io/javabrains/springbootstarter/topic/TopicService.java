@@ -7,7 +7,7 @@ import java.util.List;
 import org.springframework.stereotype.Service;
 
 @Service
-public class TopicService {
+public class TopicService { 
 
 	private List<Topic> topics = new ArrayList<>(Arrays.asList(
 
@@ -40,6 +40,7 @@ public class TopicService {
 	}
 
 	public void deleteTopic(String id) {
+	   System.out.println("id : "+id);
 		topics.removeIf(t -> t.getId().equals(id));
 
 	}
