@@ -26,9 +26,14 @@ public class DatabaseFileService {
 			
 			if(fileName.contains("..")) {
 				throw new FileStorageException("Sorry filename contains invalid path sequence"+fileName);
+	
 			}
-			System.out.println(file.getContentType());
+			byte[] arr = file.getBytes();
+			for(byte b: arr) {
+				System.out.println(b);
+			}
 			String contentType = file.getContentType();
+			
 			if(!contentType.equals("application/pdf")) {
 				
 				throw new FileStorageException("Sorry uploaded file format is not supported"+": "+fileName);
